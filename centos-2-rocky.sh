@@ -1,10 +1,10 @@
 # based on
-# https://forums.rockylinux.org/t/transition-from-centos-to-rocky/389/3
-# to be fixed with rocky equivalent
-dnf update -y
-rpm -e --nodeps centos-backgrounds centos-indexhtml centos-gpg-keys centos-linux-release centos-linux-repos centos-logos
+# https://forums.rockylinux.org/t/package-downgrade-on-centos-8-4-rocky-8-4-conversion/3062
+dnf update
+
+rpm -e --nodeps centos-gpg-keys centos-linux-release centos-linux-repos
 rpm -ivh \
-        http://springdale.princeton.edu/data/springdale/8/x86_64/os/BaseOS/Packages/springdale-appstream-8-0.sdl8.2.noarch.rpm \
-        http://springdale.princeton.edu/data/springdale/8/x86_64/os/BaseOS/Packages/springdale-core-8-0.sdl8.2.noarch.rpm \
-        http://springdale.princeton.edu/data/springdale/8/x86_64/os/BaseOS/Packages/springdale-release-8.3-0.42.el8.x86_64.rpm
+https://download.rockylinux.org/pub/rocky/8/BaseOS/x86_64/os/Packages/rocky-release-8.4-23.el8.noarch.rpm \
+https://download.rockylinux.org/pub/rocky/8/BaseOS/x86_64/os/Packages/rocky-repos-8.4-23.el8.noarch.rpm \
+https://download.rockylinux.org/pub/rocky/8/BaseOS/x86_64/os/Packages/rocky-gpg-keys-8.4-23.el8.noarch.rpm
 dnf distro-sync -y
